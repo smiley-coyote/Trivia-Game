@@ -1,0 +1,141 @@
+body {
+    background-image: url("../images/qbkls.png")
+}
+
+h1 {
+    font-size: 2em;
+}
+
+header {
+    width: 100%;
+}
+
+.main-head {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 40px;
+  
+}
+.main-body {
+    position: absolute;
+    left: 50%;
+    height: 600px;
+   
+}
+ .game-start {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: ivory;
+    border: 1px solid black;
+    display: none;
+}
+#question-1 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+#question-2 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: green;
+    border: 1px solid black;
+    display: none;
+}
+#question-3 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: purple;
+    border: 1px solid black;
+    display: block;
+}
+#question-4 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+#question-5 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+#question-6 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+#question-7 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+#question-8 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+#question-9 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+#question-10 {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+
+
+
+
+
+
