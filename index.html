@@ -6,18 +6,107 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
     <link href="assets/css/style.css" type="text/css" rel="stylesheet">
-    <title>Trivia Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>What's My Line?</title>
 </head>
 <body>
     <header>
-        <div class="main-head"><h1>Trivia Game</h1></div>
+        <div class="main-head"><h1>...What's My Line?</h1></div>
 
     </header>
 
     <div class="main-body">
-            <div class="game-start" id="start"><h1>Welcome</h1></div>
-            <div class="question-box" id="question-1"></div>
-            <div class="question-box" id="question-2"></div>
+        <!-- Start page -->
+
+            <div class="game-start">
+                <div class="box-head"><h2>Welcome to Hollywood, big shot!</h2></div>
+                <div class="box-screen"><h3>You've been hired to co-direct some big budget pictures!</h3></div>
+                <div class="oscar-screen"></div>
+                <div class="box-question"><h4>Make sure the stars get their lines right!</h4>
+                <p>This game is best played with audio</p></div>
+                <div class="box-answer"><button id="start-game">Begin</button></div>
+            </div>
+            
+            
+        <!-- Oscars page -->
+        <div id="game-oscar">
+                <div class="box-head"><h2>They loved it!</h2></div>
+                <div class="box-screen"></div>
+                <div class="oscar-screen"></div>
+                <div class="box-question"></div>
+                <div class="box-answer"></div>
+            </div>
+
+        <!-- Flop page -->
+        <div id="game-flop">
+                <div class="box-head"></div>
+                <div class="box-screen"></div>
+                <div class="box-question"></div>
+                <div class="box-answer"></div>
+            </div>
+
+
+
+        <!-- Question 1  -->
+            <div class="question-box" id="question-1">
+                <div id="box-oscars">Oscars:</div>
+                <div id="box-flops">Flops:</div>
+                    <div class="box-head"><h2> The Wizard of Oz</h2></div>
+                
+                    <div class="box-screen" id="scree">      
+                            <video id="oz">
+                                    <source src="assets/videos/wizardofoz.mp4" type="video/mp4">
+                                    <source src="assets/videos/wizardofoz.mp4" type="video/ogg">
+                                    Your browser does not support HTML5 video.
+                                  </video></div>
+                    <div class="box-question"><h4>...What's my line?"</h4></div>
+                    <div class="box-timer"></div>
+                    <div class="box-answer">
+                    <button class="answer">"I'm afraid we're not in Texas anymore"</button>
+                    <button class="answer">"I'm afraid we're not in Arizona anymore"</button>
+                    <button class="answer">"I'm afraid we're not in Kansas anymore"</button>
+                    <button class="answer">"I'm afraid we're not in the Cayman Islands anymore"</button>
+                    
+                    
+                    
+                    </div>
+            
+     
+
+            </div>
+
+
+            <!-- Question 2 -->
+            <div class="question-box" id="question-2">
+                    <div id="box-oscars">Oscars:</div>
+                    <div id="box-flops">Flops:</div>
+                        <div class="box-head"><h2> Babe</h2></div>
+                    
+                        <div class="box-screen">      
+                                <video id="babe">
+                                        <source src="assets/videos/babe.mp4" type="video/mp4">
+                                        <source src="assets/videos/babe.mp4" type="video/ogg">
+                                        Your browser does not support HTML5 video.
+                                      </video></div>
+                        <div class="box-question"><h4>...What's my line?"</h4></div>
+                        <div class="box-timer"></div>
+                        <div class="box-answer">
+                        <button class="answer">"That'll do Babe. That'll do."</button>
+                        <button class="answer">"That'll do friend. That'll do."</button>
+                        <button class="answer">"That'll do donkey. That'll do."</button>
+                        <button class="answer">"That'll do pig. That'll do."</button>
+                        
+                        
+                        
+                        </div>
+                
+         
+    
+                </div>
+
+
+
+
             <div class="question-box" id="question-3"></div>
             <div class="question-box" id="question-4"></div>
             <div class="question-box" id="question-5"></div>
@@ -29,6 +118,9 @@
            
         
     </div>
+
     
+
 </body>
+<script src="assets/javascript/app.js" type="text/javascript"></script>
 </html>

@@ -2,8 +2,21 @@ body {
     background-image: url("../images/qbkls.png")
 }
 
+h1, h2 {
+    text-align: center;
+}
+
 h1 {
     font-size: 2em;
+}
+h2 {
+    font-size: 1.7em;
+}
+h3 {
+    font-size: 1.4em;
+}
+h4 {
+    font-size: 1.2em;
 }
 
 header {
@@ -31,8 +44,10 @@ header {
     height: 600px;
     background: ivory;
     border: 1px solid black;
-    display: none;
+    display: block;
+    padding: 20px;
 }
+
 #question-1 {
     position: relative;
     top: 5%;
@@ -61,7 +76,7 @@ header {
     height: 600px;
     background: purple;
     border: 1px solid black;
-    display: block;
+    display: none;
 }
 #question-4 {
     position: relative;
@@ -134,8 +149,107 @@ header {
     display: none;
 }
 
+#game-oscar {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
+
+#game-flop {
+    position: relative;
+    top: 5%;
+    left: -50%;
+    width: 960px;
+    height: 600px;
+    background: pink;
+    border: 1px solid black;
+    display: none;
+}
 
 
+.box-head {
+    margin-top: 25px;
+}
+
+#box-oscars {
+    float: left;
+}
+
+#box-flops {
+    float: right;
+}
+.box-screen {
+    width: auto;
+    height: auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: auto;
+}
+.oscar-screen {
+    width: auto;
+    height: auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: auto;
+}
+
+.oscar-screen img {
+    width: 500px;
+    height: auto;
+}
+
+.box-screen video {
+    width: 500px;
+    height: auto;
+}
+
+.box-question {
+    margin: auto;
+    width: 400px;
+    height: auto;
+    text-align: center;
+    visibility: visible;
+   
+}
+.box-timer {
+    margin: auto;
+    width: 400px;
+    height: 18px;
+    text-align: center;
+    visibility: visible;
+}
+
+.box-answer {
+    margin: auto;
+    width: 400px;
+    height: auto;
+    text-align: center;
+    visibility: visible;
+    display: block;
+    
+    
+}
+
+.box-answer button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3px;
+    width: 100%;
+    height: auto;
+    font-size: 1.2em;
+    
+
+}
 
 
 
