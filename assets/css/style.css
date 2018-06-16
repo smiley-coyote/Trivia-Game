@@ -1,9 +1,11 @@
 body {
-    background-image: url("../images/qbkls.png")
+    background-image: url("../images/qbkls.png");
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1, h2 {
     text-align: center;
+
 }
 
 h1 {
@@ -36,7 +38,7 @@ header {
     height: 600px;
    
 }
- .game-start {
+ .game-page {
     position: relative;
     top: 5%;
     left: -50%;
@@ -48,142 +50,38 @@ header {
     padding: 20px;
 }
 
-#question-1 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-#question-2 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: green;
-    border: 1px solid black;
-    display: none;
-}
-#question-3 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: purple;
-    border: 1px solid black;
-    display: none;
-}
-#question-4 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-#question-5 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-#question-6 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-#question-7 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-#question-8 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-#question-9 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-#question-10 {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-
-#game-oscar {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
-
-#game-flop {
-    position: relative;
-    top: 5%;
-    left: -50%;
-    width: 960px;
-    height: 600px;
-    background: pink;
-    border: 1px solid black;
-    display: none;
-}
 
 
-.box-head {
+
+#box-head {
     margin-top: 25px;
 }
 
 #box-oscars {
-    float: left;
+    left: 4%;
+    position: absolute;
 }
 
-#box-flops {
-    float: right;
+#box-oscars img {
+    
+    height: 40px;
+    width: auto;
+    display: inline-block;
 }
-.box-screen {
+
+#box-razzies {
+    position: absolute;
+    right: 4%;
+}
+
+#box-razzies img {
+    
+    height: 40px;
+    width: auto;
+    display: inline-block;
+}
+
+#box-screen {
     width: auto;
     height: auto;
     margin-top: 50px;
@@ -192,35 +90,30 @@ header {
     text-align: center;
     overflow: auto;
 }
-.oscar-screen {
-    width: auto;
-    height: auto;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+
+#box-head {
     text-align: center;
-    overflow: auto;
 }
 
-.oscar-screen img {
+#box-screen img {
     width: 500px;
     height: auto;
 }
 
-.box-screen video {
+#box-screen video {
     width: 500px;
     height: auto;
 }
 
-.box-question {
+#box-question {
     margin: auto;
     width: 400px;
     height: auto;
     text-align: center;
-    visibility: visible;
+    display: none;
    
 }
-.box-timer {
+#box-timer {
     margin: auto;
     width: 400px;
     height: 18px;
@@ -228,7 +121,7 @@ header {
     visibility: visible;
 }
 
-.box-answer {
+#box-answer {
     margin: auto;
     width: 400px;
     height: auto;
@@ -239,7 +132,7 @@ header {
     
 }
 
-.box-answer button {
+#box-answer button {
     display: block;
     margin-left: auto;
     margin-right: auto;
