@@ -8,6 +8,7 @@ var disappointedIndex = ["assets/images/disappointed1.gif", "assets/images/disap
 var movieOz = ['"I have a feeling we\'re not in Texas anymore"', '"I have a feeling we\'re not in Kansas anymore"', '"I have a feeling we\'re not in Arizona anymore"', '"I have a feeling we\'re not in the Cayman Islands anymore"']
 var movieBabe = ['"That\'ll do Babe. That\'ll do."', '"That\'ll do donkey. That\'ll do."', '"That\'ll do friend. That\'ll do."', '"That\'ll do pig. That\'ll do."']
 var movieGodfather = ['"I\'m gonna make him a proposal he can\'t refuse"', '"I\'m gonna make him an offer he can\'t refuse"', '"I\'m gonna make him a deal he can\'t refuse"', '"I\'m gonna make him a tiramisu he can\'t refuse"']
+var movieJaws = ['"You\'re gonna need a bigger boat"', '"You\'re gonna need a bigger gun"', '"You\'re gonna need a bigger net"', '"You\'re gonna need a bigger float"'];
 var movieStarWars = ['"Luke, I am your father"', '"Luke, I am your Daddy"', '"No! I am your father"', '"No! I am your Daddy"']
 var question = 0;
 var myVar;
@@ -69,15 +70,24 @@ function answerStart() {
             }
             clearInterval(myVar)
         }
-    if(question == 3){
-        for (i=0; i<movieBabe.length; i++) {
+    if(question == 4){
+        for (i=0; i<movieJaws.length; i++) {
             var buttons = $("<button>");
             buttons.addClass("answers");
-            buttons.text(movieStarWars[i]);
+            buttons.text(movieJaws[i]);
             $("#box-answer").append(buttons);
             }
             clearInterval(myVar)
         }
+        if(question == 5){
+            for (i=0; i<movieStarWars.length; i++) {
+                var buttons = $("<button>");
+                buttons.addClass("answers");
+                buttons.text(movieStarWars[i]);
+                $("#box-answer").append(buttons);
+                }
+                clearInterval(myVar)
+            }
 }
 // question correct/incorrect
 $(document).on("click", ".answers", function() {
@@ -115,6 +125,17 @@ $(document).on("click", ".answers", function() {
     }
     }
     if (question == 4) {
+        var jaws = '"You\'re gonna need a bigger boat"';
+    var jawsText = $(this).text();
+    if (jaws == jawsText) {
+      video.play();
+      myVar = setInterval(correctOne, 1000);
+    }
+    else {
+        incorrectOne();
+    }
+    }
+    if (question == 5) {
         var starwars = '"No! I am your father"';
     var starwarsText = $(this).text();
     if (starwars == starwarsText) {
@@ -125,7 +146,6 @@ $(document).on("click", ".answers", function() {
         incorrectOne();
     }
     }
-    
 })
 
 // Question correct!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -142,7 +162,7 @@ function correctOne() {
     $("#box-screen").html("<img src=" + applause + " />");
     var button = $("<button>");
     button.addClass("next-question");
-    button.text("Next Movie");
+    button.text("Next");
     $("#box-answer").append(button);
 }
 // Question incorrect!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -157,7 +177,7 @@ function incorrectOne() {
     $("#box-screen").html("<img src=" + disappointed + " />");
     var button = $("<button>");
     button.addClass("next-question");
-    button.text("Next Movie");
+    button.text("Next");
     $("#box-answer").append(button);
 }
 
@@ -226,10 +246,41 @@ $(document).on("click", ".next-question", function() {
         video.appendTo($('#box-screen'));
         return;
     }
+    if (question == 5) {
+        endGame();
+    }
     
 })
 
-
+function endGame() {
+    $("#box-screen").html("<h2>Number of Oscars: " + oscars + "</h2>" + "<h2>Number of Razzies: " + razzies + "</h2>" )
+    var button = $("<button>");
+    button.addClass("play-again");
+    button.text("Play Again");
+    $("#box-answer").html(button);
+    myVar = setInterval(endgameConditions, 2000);
+}
+function endgameConditions() {
+    if (oscars == 5){
+        $("#box-screen").append("<h2>Perfect Game!</h2>")
+    }
+    if (oscars == 4){
+        $("#box-screen").append("<h2>Great job!</h2>")
+    }
+    if (oscars == 3){
+        $("#box-screen").append("<h2>Not bad!</h2>")
+    }
+    if (oscars == 2){
+        $("#box-screen").append("<h2>You need improvement!</h2>")
+    }
+    if (oscars == 1){
+        $("#box-screen").append("<h2>Terrible!</h2>")
+    }
+    if (oscars == 0){
+        $("#box-screen").append("<h2>You're fired!</h2>")
+    }
+    clearInterval(myVar);
+}
 
 // timer
 
