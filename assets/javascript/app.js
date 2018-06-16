@@ -8,6 +8,7 @@ var disappointedIndex = ["assets/images/disappointed1.gif", "assets/images/disap
 var movieOz = ['"I have a feeling we\'re not in Texas anymore"', '"I have a feeling we\'re not in Kansas anymore"', '"I have a feeling we\'re not in Arizona anymore"', '"I have a feeling we\'re not in the Cayman Islands anymore"']
 var movieBabe = ['"That\'ll do Babe. That\'ll do."', '"That\'ll do donkey. That\'ll do."', '"That\'ll do friend. That\'ll do."', '"That\'ll do pig. That\'ll do."']
 var movieGodfather = ['"I\'m gonna make him a proposal he can\'t refuse"', '"I\'m gonna make him an offer he can\'t refuse"', '"I\'m gonna make him a deal he can\'t refuse"', '"I\'m gonna make him a tiramisu he can\'t refuse"']
+var movieStarWars = ['"Luke, I am your father"', '"Luke, I am your Daddy"', '"No! I am your father"', '"No! I am your Daddy"']
 var question = 0;
 var myVar;
 var myVar2;
@@ -68,6 +69,15 @@ function answerStart() {
             }
             clearInterval(myVar)
         }
+    if(question == 3){
+        for (i=0; i<movieBabe.length; i++) {
+            var buttons = $("<button>");
+            buttons.addClass("answers");
+            buttons.text(movieStarWars[i]);
+            $("#box-answer").append(buttons);
+            }
+            clearInterval(myVar)
+        }
 }
 // question correct/incorrect
 $(document).on("click", ".answers", function() {
@@ -104,6 +114,18 @@ $(document).on("click", ".answers", function() {
         incorrectOne();
     }
     }
+    if (question == 4) {
+        var starwars = '"No! I am your father"';
+    var starwarsText = $(this).text();
+    if (starwars == starwarsText) {
+      video.play();
+      myVar = setInterval(correctOne, 1000);
+    }
+    else {
+        incorrectOne();
+    }
+    }
+    
 })
 
 // Question correct!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -182,6 +204,21 @@ $(document).on("click", ".next-question", function() {
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/jaws.mp4',
+            type: 'video/mp4',
+            controls: false,
+            autoplay: true
+        });
+        video.appendTo($('#box-screen'));
+        return;
+    }
+    if (question == 4) {
+        question++;
+        $("#box-head").html("<h1>Star Wars: A New Hope</h1>");
+        $("#box-answer").html("");
+        myVar = setInterval(questionStart, 2000)
+        var video = $('<video />', {
+            id: 'video',
+            src: 'assets/videos/starwars.mp4',
             type: 'video/mp4',
             controls: false,
             autoplay: true
