@@ -12,17 +12,23 @@ var movieJaws = ['"You\'re gonna need a bigger boat"', '"You\'re gonna need a bi
 var movieStarWars = ['"Luke, I am your father"', '"Luke, I am your Daddy"', '"No! I am your father"', '"No! I am your Daddy"']
 var question = 0;
 var myVar;
-var myVar2;
-var ozText = "";
+var correctText;
+var buttonText;
+var audienceApplause = new Audio(['assets/audio/applause.mp3']);
+var audienceBored = new Audio(['assets/audio/boredaudience.mp3']);
 
 
 $(document).ready(function(){
 // start game
 $("#start-game").click(function() {
+    $("#box-oscars").css("visibility", "visible");
+    $("#box-razzies").css("visibility", "visible");
+    $("body").css("background-image", "url(assets/images/oz-background.jpg)");
+    $(".game-page").css("border", "5px solid gold");
     question++;
-    $("#box-head").html("<h1>Wizard of Oz</h1>");
+    $("#box-head").html("<h1>The Wizard of Oz</h1>");
     $("#box-answer").html("");
-    myVar = setInterval(questionStart, 1000)
+    myVar = setInterval(questionStart, 17000)
     var video = $('<video />', {
         id: 'video',
         src: 'assets/videos/wizardofoz.mp4',
@@ -36,6 +42,7 @@ $("#start-game").click(function() {
 })
 // question
 function questionStart() {
+    startTimer();
     video.pause();
     clearInterval(myVar);
     $("#box-question").fadeIn();
@@ -43,6 +50,7 @@ function questionStart() {
 }
 // answer
 function answerStart() {
+    
     if (question == 1){
     for (i=0; i<movieOz.length; i++) {
     var buttons = $("<button>");
@@ -92,55 +100,75 @@ function answerStart() {
 // question correct/incorrect
 $(document).on("click", ".answers", function() {
     if (question == 1) {
-    var oz = '"I have a feeling we\'re not in Kansas anymore"';
-    ozText = $(this).text();
-    if (oz == ozText) {
+    correctText = '"I have a feeling we\'re not in Kansas anymore"';
+    movieText = $(this).text();
+    if (correctText == movieText) {
+        $("#box-question").css("display", "none");
+        $("#box-answer").html('');
+        clearInterval(counter);
+        $("#box-timer").html("");
       video.play();
-      myVar = setInterval(correctOne, 1000);
+      myVar = setInterval(correctOne, 10000);
     }
     else {
         incorrectOne();
     }
     }
     if (question == 2) {
-        var pig = '"That\'ll do pig. That\'ll do."';
-    var pigText = $(this).text();
-    if (pig == pigText) {
+    correctText = '"That\'ll do pig. That\'ll do."';
+    movieText = $(this).text();
+    if (correctText == movieText) {
+        $("#box-question").css("display", "none");
+        $("#box-answer").html('');
+        clearInterval(counter);
+        $("#box-timer").html("");
       video.play();
-      myVar = setInterval(correctOne, 1000);
+      myVar = setInterval(correctOne, 12000);
     }
     else {
         incorrectOne();
     }
     }
     if (question == 3) {
-        var godfather = '"I\'m gonna make him an offer he can\'t refuse"';
-    var godfatherText = $(this).text();
-    if (godfather == godfatherText) {
+    correctText = '"I\'m gonna make him an offer he can\'t refuse"';
+    movieText = $(this).text();
+    if (correctText == movieText) {
+        $("#box-question").css("display", "none");
+        $("#box-answer").html('');
+        clearInterval(counter);
+        $("#box-timer").html("");
       video.play();
-      myVar = setInterval(correctOne, 1000);
+      myVar = setInterval(correctOne, 5000);
     }
     else {
         incorrectOne();
     }
     }
     if (question == 4) {
-        var jaws = '"You\'re gonna need a bigger boat"';
-    var jawsText = $(this).text();
-    if (jaws == jawsText) {
+    correctText = '"You\'re gonna need a bigger boat"';
+    movieText = $(this).text();
+    if (correctText == movieText) {
+        $("#box-question").css("display", "none");
+        $("#box-answer").html('');
+        clearInterval(counter);
+        $("#box-timer").html("");
       video.play();
-      myVar = setInterval(correctOne, 1000);
+      myVar = setInterval(correctOne, 2000);
     }
     else {
         incorrectOne();
     }
     }
     if (question == 5) {
-        var starwars = '"No! I am your father"';
-    var starwarsText = $(this).text();
-    if (starwars == starwarsText) {
+    correctText = '"No! I am your father"';
+    movieText = $(this).text();
+    if (movieText == correctText) {
+        $("#box-question").css("display", "none");
+        $("#box-answer").html('');
+        clearInterval(counter);
+        $("#box-timer").html("");
       video.play();
-      myVar = setInterval(correctOne, 1000);
+      myVar = setInterval(correctOne, 17000);
     }
     else {
         incorrectOne();
@@ -150,13 +178,14 @@ $(document).on("click", ".answers", function() {
 
 // Question correct!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function correctOne() {
+    $("body").css("background-image", "url(assets/images/redcurtain.png)");
     oscars++;
-    
+    audienceApplause.play();
     console.log(oscars);
     $("#box-oscars").append("<img src='assets/images/oscar-trophie.png' />");
-    $("#box-question").css("display", "none");
-    $("#box-answer").html('');
-    $("#box-head").html('They loved it!');
+    
+    
+    $("#box-head").html('<h1>They loved it!</h1>');
     clearInterval(myVar);
     var applause = applauseIndex[Math.floor(Math.random() * (5-1) +1)];
     $("#box-screen").html("<img src=" + applause + " />");
@@ -167,11 +196,15 @@ function correctOne() {
 }
 // Question incorrect!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function incorrectOne() {
-    
+    audienceBored.play();
+    $("body").css("background-image", "url(assets/images/redcurtain.png)");
+    clearInterval(counter);
+    $("#box-timer").html("");
     razzies++;
+    console.log("razzies: " + razzies);
     $("#box-razzies").append("<img src='assets/images/razzie-trophie.png' />");
     $("#box-question").css("display", "none");
-    $("#box-answer").html('');
+    $("#box-answer").html('<h2>The correct line was ' + correctText);
     $("#box-head").html("<h1>What was that?</h1>");
     var disappointed = disappointedIndex[Math.floor(Math.random() * (3-1) +1)];
     $("#box-screen").html("<img src=" + disappointed + " />");
@@ -184,13 +217,17 @@ function incorrectOne() {
 
 // next movie =========================================================================================================
 $(document).on("click", ".next-question", function() {
+    audienceBored.pause();
+    audienceApplause.pause();
+    $("body").css("background-image", "url(assets/images/farm.jpg)");
+    $(".game-page").css("border", "5px solid red");
     $("#box-head").html("");
     $("#box-screen").html("");
     if (question == 1) {
     question++;
     $("#box-head").html("<h1>Babe</h1>");
     $("#box-answer").html("");
-    myVar = setInterval(questionStart, 2000)
+    myVar = setInterval(questionStart, 39000)
     var video = $('<video />', {
         id: 'video',
         src: 'assets/videos/babe.mp4',
@@ -202,10 +239,12 @@ $(document).on("click", ".next-question", function() {
     return;
     }
     if (question == 2) {
+    $("body").css("background-image", "url(assets/images/zwartevilt.png)");
+    $(".game-page").css("border", "5px solid gray");
         question++;
         $("#box-head").html("<h1>The Godfather</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 2000)
+        myVar = setInterval(questionStart, 32000)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/thegodfather.mp4',
@@ -217,10 +256,12 @@ $(document).on("click", ".next-question", function() {
         return;
     }
     if (question == 3) {
+        $("body").css("background-image", "url(assets/images/ocean.jpg)");
+        $(".game-page").css("border", "5px solid blue");
         question++;
-        $("#box-head").html("<h1>The Godfather</h1>");
+        $("#box-head").html("<h1>Jaws</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 2000)
+        myVar = setInterval(questionStart, 18000)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/jaws.mp4',
@@ -232,10 +273,12 @@ $(document).on("click", ".next-question", function() {
         return;
     }
     if (question == 4) {
+        $("body").css("background-image", "url(assets/images/stars.jpg)");
+        $(".game-page").css("border", "5px solid rgb(58, 19, 151)");
         question++;
         $("#box-head").html("<h1>Star Wars: A New Hope</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 2000)
+        myVar = setInterval(questionStart, 29600)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/starwars.mp4',
@@ -248,39 +291,64 @@ $(document).on("click", ".next-question", function() {
     }
     if (question == 5) {
         endGame();
+      
     }
     
 })
-
+// End game page ==========================================================================================================
 function endGame() {
-    $("#box-screen").html("<h2>Number of Oscars: " + oscars + "</h2>" + "<h2>Number of Razzies: " + razzies + "</h2>" )
+    $("body").css("background-image", "url(assets/images/redcurtain.png)");
+    $("#box-oscars").html("");
+    $("#box-razzies").html("");
+    $("#box-head").html("<h1>Oscars won: </h1>")
+    $("#box-screen").html("<h1>Razzies won: </h1>")
+    for (i=0; i<oscars; i++) {
+        $("#box-head").append("<img src='assets/images/oscar-trophie.png' />");
+    }
+    for (j=0; j<razzies; j++) {
+        $("#oscar-screen").append("<img src='assets/images/razzie-trophie.png' />");
+    }
+   
+   
+    
     var button = $("<button>");
     button.addClass("play-again");
     button.text("Play Again");
     $("#box-answer").html(button);
-    myVar = setInterval(endgameConditions, 2000);
+    $("#box-answer").prepend("<br><br>");
+    myVar = setInterval(endgameConditions, 1000);
 }
 function endgameConditions() {
     if (oscars == 5){
-        $("#box-screen").append("<h2>Perfect Game!</h2>")
+        audienceApplause.play();
+        $("#box-timer").append("<br><h3>Perfect Game!</h3>")
     }
     if (oscars == 4){
-        $("#box-screen").append("<h2>Great job!</h2>")
+        audienceApplause.play();
+        $("#box-timer").append("<br><h3>Great job!</h3>")
     }
     if (oscars == 3){
-        $("#box-screen").append("<h2>Not bad!</h2>")
+        audienceApplause.play();
+        $("#box-timer").append("<br><h3>Not bad!</h3>")
     }
     if (oscars == 2){
-        $("#box-screen").append("<h2>You need improvement!</h2>")
+        audienceBored.play();
+        $("#box-timer").append("<br><h3>You need improvement!</h3>")
     }
     if (oscars == 1){
-        $("#box-screen").append("<h2>Terrible!</h2>")
+        audienceBored.play();
+        $("#box-timer").append("<br><h3>Terrible!</h3>")
     }
     if (oscars == 0){
-        $("#box-screen").append("<h2>You're fired!</h2>")
+        audienceBored.play();
+        $("#box-timer").append("<br><h3>You're fired!</h3>")
     }
     clearInterval(myVar);
 }
+
+$(document).on("click", ".play-again", function() {
+    location.reload();
+})
 
 // timer
 
@@ -295,11 +363,11 @@ function timer()
   if (count < 0)
   {
      clearInterval(counter);
-     timesUp();
+     incorrectOne();
      return;
   }
 
-  $(".box-timer").html("<p>" + count + "</p>")
+  $("#box-timer").html("<p>" + count + "</p>")
 }
 }
 

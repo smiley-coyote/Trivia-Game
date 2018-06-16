@@ -1,15 +1,22 @@
 body {
-    background-image: url("../images/qbkls.png");
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/redcurtain.png");
+    font-family: 'Coustard', serif;
 }
-
+button {
+    font-family: 'Coustard', serif;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+button:hover {
+    border: 2px solid #137bd0;
+}
 h1, h2 {
     text-align: center;
 
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.2em;
 }
 h2 {
     font-size: 1.7em;
@@ -23,43 +30,71 @@ h4 {
 
 header {
     width: 100%;
+    text-shadow: 2px 2px black;
 }
-
+#reel {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    right: 52%;
+    top: -3%;
+    z-index: -1;
+}
+   
 .main-head {
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     padding-top: 40px;
+    color: white;
   
 }
 .main-body {
     position: absolute;
     left: 50%;
     height: 600px;
+    
    
 }
  .game-page {
     position: relative;
     top: 5%;
     left: -50%;
-    width: 960px;
-    height: 600px;
+    width: 850px;
+    height: 575px;
     background: ivory;
-    border: 1px solid black;
+    border: 5px solid black;
     display: block;
     padding: 20px;
+    border-radius: 10px;
 }
 
-
+#chair {
+    height: 200px;
+    width: auto;
+}
 
 
 #box-head {
     margin-top: 25px;
 }
-
+#oscar-screen {
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: auto;
+}
+#oscar-screen img {
+    width: 80px;
+    height: auto;
+    display: inline-block;
+}
 #box-oscars {
     left: 4%;
     position: absolute;
+    visibility: hidden;
 }
 
 #box-oscars img {
@@ -72,6 +107,7 @@ header {
 #box-razzies {
     position: absolute;
     right: 4%;
+    visibility: hidden;
 }
 
 #box-razzies img {
@@ -90,11 +126,6 @@ header {
     text-align: center;
     overflow: auto;
 }
-
-#box-head {
-    text-align: center;
-}
-
 #box-screen img {
     width: 500px;
     height: auto;
@@ -104,6 +135,18 @@ header {
     width: 500px;
     height: auto;
 }
+
+
+
+#box-head {
+    text-align: center;
+}
+#box-head img{
+    width: 80px;
+    height: auto;
+    display: inline-block;
+}
+
 
 #box-question {
     margin: auto;
@@ -123,7 +166,7 @@ header {
 
 #box-answer {
     margin: auto;
-    width: 400px;
+    width: 500px;
     height: auto;
     text-align: center;
     visibility: visible;
@@ -139,7 +182,7 @@ header {
     margin-bottom: 3px;
     width: 100%;
     height: auto;
-    font-size: 1.2em;
+    font-size: 1.1em;
     
 
 }
