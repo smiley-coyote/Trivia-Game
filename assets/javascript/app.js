@@ -52,6 +52,7 @@ function questionStart() {
 function answerStart() {
     
     if (question == 1){
+    correctText = '"I have a feeling we\'re not in Kansas anymore"';
     for (i=0; i<movieOz.length; i++) {
     var buttons = $("<button>");
     buttons.addClass("answers");
@@ -61,6 +62,7 @@ function answerStart() {
     clearInterval(myVar)
     }
     if(question == 2){
+    correctText = '"That\'ll do pig. That\'ll do."';
     for (i=0; i<movieBabe.length; i++) {
         var buttons = $("<button>");
         buttons.addClass("answers");
@@ -70,6 +72,7 @@ function answerStart() {
         clearInterval(myVar)
     }
     if(question == 3){
+    correctText = '"I\'m gonna make him an offer he can\'t refuse"';
         for (i=0; i<movieBabe.length; i++) {
             var buttons = $("<button>");
             buttons.addClass("answers");
@@ -79,6 +82,7 @@ function answerStart() {
             clearInterval(myVar)
         }
     if(question == 4){
+        correctText = '"You\'re gonna need a bigger boat"';
         for (i=0; i<movieJaws.length; i++) {
             var buttons = $("<button>");
             buttons.addClass("answers");
@@ -88,6 +92,7 @@ function answerStart() {
             clearInterval(myVar)
         }
         if(question == 5){
+            correctText = '"No! I am your father"';
             for (i=0; i<movieStarWars.length; i++) {
                 var buttons = $("<button>");
                 buttons.addClass("answers");
@@ -100,7 +105,6 @@ function answerStart() {
 // question correct/incorrect
 $(document).on("click", ".answers", function() {
     if (question == 1) {
-    correctText = '"I have a feeling we\'re not in Kansas anymore"';
     movieText = $(this).text();
     if (correctText == movieText) {
         $("#box-question").css("display", "none");
@@ -115,7 +119,6 @@ $(document).on("click", ".answers", function() {
     }
     }
     if (question == 2) {
-    correctText = '"That\'ll do pig. That\'ll do."';
     movieText = $(this).text();
     if (correctText == movieText) {
         $("#box-question").css("display", "none");
@@ -130,7 +133,6 @@ $(document).on("click", ".answers", function() {
     }
     }
     if (question == 3) {
-    correctText = '"I\'m gonna make him an offer he can\'t refuse"';
     movieText = $(this).text();
     if (correctText == movieText) {
         $("#box-question").css("display", "none");
@@ -145,7 +147,6 @@ $(document).on("click", ".answers", function() {
     }
     }
     if (question == 4) {
-    correctText = '"You\'re gonna need a bigger boat"';
     movieText = $(this).text();
     if (correctText == movieText) {
         $("#box-question").css("display", "none");
@@ -160,7 +161,7 @@ $(document).on("click", ".answers", function() {
     }
     }
     if (question == 5) {
-    correctText = '"No! I am your father"';
+    
     movieText = $(this).text();
     if (movieText == correctText) {
         $("#box-question").css("display", "none");
@@ -227,7 +228,7 @@ $(document).on("click", ".next-question", function() {
     question++;
     $("#box-head").html("<h1>Babe</h1>");
     $("#box-answer").html("");
-    myVar = setInterval(questionStart, 39000)
+    myVar = setInterval(questionStart, 40000)
     var video = $('<video />', {
         id: 'video',
         src: 'assets/videos/babe.mp4',
@@ -278,7 +279,7 @@ $(document).on("click", ".next-question", function() {
         question++;
         $("#box-head").html("<h1>Star Wars: A New Hope</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 29600)
+        myVar = setInterval(questionStart, 30500)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/starwars.mp4',
@@ -372,3 +373,5 @@ function timer()
 }
 
 })
+
+// actual time from star wars clip is 29600. 
