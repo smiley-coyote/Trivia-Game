@@ -230,7 +230,6 @@ $(document).on("click", ".next-question", function() {
     question++;
     $("#box-head").html("<h1>Babe</h1>");
     $("#box-answer").html("");
-    myVar = setInterval(questionStart, 40000)
     var video = $('<video />', {
         id: 'video',
         src: 'assets/videos/babe.mp4',
@@ -239,6 +238,7 @@ $(document).on("click", ".next-question", function() {
         autoplay: true
     });
     video.appendTo($('#box-screen'));
+    myVar = setInterval(questionStart, 39000);
     return;
     }
     if (question == 2) {
@@ -247,7 +247,6 @@ $(document).on("click", ".next-question", function() {
         question++;
         $("#box-head").html("<h1>The Godfather</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 32000)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/thegodfather.mp4',
@@ -256,6 +255,7 @@ $(document).on("click", ".next-question", function() {
             autoplay: true
         });
         video.appendTo($('#box-screen'));
+        myVar = setInterval(questionStart, 32000);
         return;
     }
     if (question == 3) {
@@ -264,7 +264,6 @@ $(document).on("click", ".next-question", function() {
         question++;
         $("#box-head").html("<h1>Jaws</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 18000)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/jaws.mp4',
@@ -273,6 +272,7 @@ $(document).on("click", ".next-question", function() {
             autoplay: true
         });
         video.appendTo($('#box-screen'));
+        myVar = setInterval(questionStart, 18000)
         return;
     }
     if (question == 4) {
@@ -281,7 +281,6 @@ $(document).on("click", ".next-question", function() {
         question++;
         $("#box-head").html("<h1>Star Wars: A New Hope</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 30000)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/starwars.mp4',
@@ -290,6 +289,7 @@ $(document).on("click", ".next-question", function() {
             autoplay: true
         });
         video.appendTo($('#box-screen'));
+        myVar = setInterval(questionStart, 29600)
         return;
     }
     if (question == 5) {
