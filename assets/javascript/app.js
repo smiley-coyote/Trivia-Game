@@ -220,6 +220,8 @@ function incorrectOne() {
 $(document).on("click", ".next-question", function() {
     audienceBored.pause();
     audienceApplause.pause();
+    audienceBored.currentTime = 0;
+    audienceApplause.currentTime = 0;
     $("body").css("background-image", "url(assets/images/farm.jpg)");
     $(".game-page").css("border", "5px solid red");
     $("#box-head").html("");
@@ -279,7 +281,7 @@ $(document).on("click", ".next-question", function() {
         question++;
         $("#box-head").html("<h1>Star Wars: A New Hope</h1>");
         $("#box-answer").html("");
-        myVar = setInterval(questionStart, 30500)
+        myVar = setInterval(questionStart, 30000)
         var video = $('<video />', {
             id: 'video',
             src: 'assets/videos/starwars.mp4',
@@ -298,6 +300,8 @@ $(document).on("click", ".next-question", function() {
 })
 // End game page ==========================================================================================================
 function endGame() {
+    audienceBored.currentTime = 0;
+    audienceApplause.currentTime = 0;
     $("body").css("background-image", "url(assets/images/redcurtain.png)");
     $("#box-oscars").html("");
     $("#box-razzies").html("");

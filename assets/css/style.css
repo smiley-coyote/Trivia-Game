@@ -69,8 +69,8 @@ header {
     border-radius: 10px;
 }
 
-#chair {
-    height: 200px;
+#chair img {
+    height: 400px;
     width: auto;
 }
 
