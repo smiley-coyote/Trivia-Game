@@ -165,10 +165,11 @@ $(document).on("click", ".answers", function() {
     movieText = $(this).text();
     if (movieText == correctText) {
         $("#box-question").css("display", "none");
+        $("#box-screen").html('');
         $("#box-answer").html('');
         clearInterval(counter);
         $("#box-timer").html("");
-      video.play();
+      playStarWars();
       myVar = setInterval(correctOne, 17000);
     }
     else {
@@ -283,7 +284,7 @@ $(document).on("click", ".next-question", function() {
         $("#box-answer").html("");
         var video = $('<video />', {
             id: 'video',
-            src: 'assets/videos/starwars.mp4',
+            src: 'assets/videos/starwars-p1.mp4',
             type: 'video/mp4',
             controls: false,
             autoplay: true
@@ -377,5 +378,16 @@ function timer()
 }
 
 })
+
+function playStarWars() {
+    var video = $('<video />', {
+        id: 'video',
+        src: 'assets/videos/starwars-p2.mp4',
+        type: 'video/mp4',
+        controls: false,
+        autoplay: true
+    });
+    video.appendTo($('#box-screen'));
+}
 
 // actual time from star wars clip is 29600. 
