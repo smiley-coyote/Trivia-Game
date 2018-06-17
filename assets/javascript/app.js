@@ -290,7 +290,7 @@ $(document).on("click", ".next-question", function() {
             autoplay: true
         });
         video.appendTo($('#box-screen'));
-        myVar = setInterval(questionStart, 29600)
+        myVar = setInterval(questionStart, 30500)
         return;
     }
     if (question == 5) {
