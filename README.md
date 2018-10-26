@@ -1,4 +1,30 @@
 # What's My Line? 
-## A Movie Quote Trivia Game
+A Movie Quote Trivia Game
 
-### The purpose of this assignement was to practice my new-learned skills in JavaScript and jQuery by making a triva game. I decided to go with the movie quotes theme because I enjoy watching movies and thought it would be a fun challenge incorporate a movieclip with a question. 
+##Story
+You are the script supervisor to a big blockbuster motion picture, and your job is 
+to make sure the actor's get their lines right!
+
+##How to play
+Click start and a clip of a movie will play. It will pause at the start of a famous line, and you
+will have 10 seconds to select the correct line. If correct, the rest of the clip will play and
+you will receive an Oscar! If the incorrect, you will receive a Razzie.
+Collect trophies and at the end, we'll let you know how you scored overall. Have fun!
+
+##Technologies
+HTML5
+CSS
+JavaScript
+jQuery
+
+###If you enjoyed this game, check out some other games that I made!
+Jukebox Hangman:
+https://smiley-coyote.github.io/Word-Guess-Game/
+
+Avatar RPG:
+https://smiley-coyote.github.io/unit-4-game/
+
+Sick Puppies Memory Game:
+https://smiley-coyote.github.io/memory-game/
+
+
