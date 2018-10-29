@@ -9,7 +9,7 @@ to make sure the actor's get their lines right!
 Click start and a clip of a movie will play. It will pause at the start of a famous line, and you
 will have 10 seconds to select the correct line. If correct, the rest of the clip will play and
 you will receive an Oscar! If the incorrect, you will receive a Razzie.
-Collect trophies and at the end, we'll let you know how you scored overall. Have fun!
+Collect trophies and at the end we'll let you know how you scored overall. Have fun!
 
 Link to game:
 * https://smiley-coyote.github.io/Trivia-Game/
